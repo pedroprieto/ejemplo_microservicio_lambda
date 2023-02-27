@@ -32,14 +32,14 @@ function mostrarGastos(usuario, gastoId) {
 }
 
 // Gastos del usuario (GET)
-api.get('/{usuario}', function (request) {
+api.get('/api/{usuario}', function (request) {
     var usuarioNombre = querystring.unescape(request.pathParams.usuario);
     return mostrarGastos(usuarioNombre);
 
 });
 
 // POST
-api.post('/{usuario}', function (request) {
+api.post('/api/{usuario}', function (request) {
     var data = request.body;
     var usuarioNombre = querystring.unescape(request.pathParams.usuario);
     data.usuario = usuarioNombre;
@@ -54,7 +54,7 @@ api.post('/{usuario}', function (request) {
 
 
 // Gasto de un usuario (GET)
-api.get('/{usuario}/{gastoId}', function (request) {
+api.get('/api/{usuario}/{gastoId}', function (request) {
     var usuarioNombre = querystring.unescape(request.pathParams.usuario);
     var gastoId = querystring.unescape(request.pathParams.gastoId);
     return mostrarGastos(usuarioNombre, gastoId).then(items => {
@@ -64,7 +64,7 @@ api.get('/{usuario}/{gastoId}', function (request) {
 });
 
 // PUT
-api.put('/{usuario}/{gastoId}', function (request) {
+api.put('/api/{usuario}/{gastoId}', function (request) {
     var data = request.body;
     var usuarioNombre = querystring.unescape(request.pathParams.usuario);
     var gastoId = querystring.unescape(request.pathParams.gastoId);
@@ -78,7 +78,7 @@ api.put('/{usuario}/{gastoId}', function (request) {
 }, { success: 200 });
 
 // DELETE
-api.delete('/{usuario}/{gastoId}', function (request) {
+api.delete('/api/{usuario}/{gastoId}', function (request) {
     var usuarioNombre = querystring.unescape(request.pathParams.usuario);
     var gastoId = querystring.unescape(request.pathParams.gastoId);
     var params = {

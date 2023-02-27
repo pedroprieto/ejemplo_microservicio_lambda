@@ -1,5 +1,5 @@
 {
-    "name": "u09-a05-cp",
+    "name": "api_gastos",
     "version": "1.0.0",
     "description": "API para almacenar gastos de diferentes usuarios",
     "main": "index.js",
