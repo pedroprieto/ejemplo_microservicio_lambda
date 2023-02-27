@@ -4,7 +4,7 @@
     "description": "API para almacenar gastos de diferentes usuarios",
     "main": "index.js",
     "config": {
-        "tableName": "tabla-u09-a05-cp",
+        "tableName": "apigastos",
         "region": "us-east-1",
         "role": "SUSTITUIR_POR_ARN_LABROLE"
     },
