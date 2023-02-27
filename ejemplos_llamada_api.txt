@@ -1,0 +1,1 @@
+curl -H "Content-Type: application/json" -X POST --data '{"descripcion":"gasto2","valor":15}' URL_API/api/user1
