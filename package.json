@@ -1,0 +1,31 @@
+{
+    "name": "u09-a05-cp",
+    "version": "1.0.0",
+    "description": "API para almacenar gastos de diferentes usuarios",
+    "main": "index.js",
+    "config": {
+        "tableName": "tabla-u09-a05-cp",
+        "region": "us-east-1",
+        "role": "SUSTITUIR_POR_ARN_LABROLE"
+    },
+    "scripts": {
+        "deployLambda": "claudia create --region $npm_package_config_region --api-module index --set-env TABLE_NAME=$npm_package_config_tableName --role $npm_package_config_role",
+        "destroyLambda": "claudia destroy",
+        "updateLambda": "claudia update",
+        "createTable": "./create_table.sh $npm_package_config_tableName $npm_package_config_region",
+        "destroyTable": "./delete_table.sh $npm_package_config_tableName",
+        "deployApp": "npm run createTable && npm run deployLambda",
+        "destroyApp": "npm run destroyLambda & npm run destroyTable",
+        "test": "npm test"
+    },
+    "author": "Pedro Prieto",
+    "license": "GPL-v3",
+    "dependencies": {
+        "aws-sdk": "^2.1046.0",
+        "claudia-api-builder": "^4.1.2",
+        "uuid": "^8.3.2"
+    },
+    "devDependencies": {
+        "claudia": "^5.14.1"
+    }
+}
