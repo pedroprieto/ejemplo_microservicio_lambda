@@ -31,6 +31,11 @@ function mostrarGastos(usuario, gastoId) {
         })
 }
 
+// Nueva ruta API
+// api.get('/saludo', function (request) {
+//     return {message: "¡¡Buenas tardes!!"};
+// });
+
 // Gastos del usuario (GET)
 api.get('/api/{usuario}', function (request) {
     var usuarioNombre = querystring.unescape(request.pathParams.usuario);
